@@ -1,4 +1,4 @@
-function getAllCrime(myLatLong){
+function getTotalCrime(myLatLong, location, id){
 	
 	var antiSocialBehaviour = 0;
 	var bicycleTheft = 0;
@@ -14,16 +14,16 @@ function getAllCrime(myLatLong){
 	var vehicleCrime = 0;
 	var violentCrime = 0;
 	var otherCrime  = 0;
-	
+
 	var totalCrime = 0;
 
 	$.ajax({
 		url: "http://housingrecommender.jacob.uk.com/api/getAllCrimes.php?lat=" + myLatLong.lb + "&long=" + myLatLong.mb + "",
 		dataType: "jsonp",
 		
+
 		success: function(data){
 			for(var i = 0; i < data.length; i++){
-				console.log(data[i].category);
 				switch(data[i].category){
 					case "anti-social-behaviour":
 						antiSocialBehaviour++;
@@ -69,17 +69,17 @@ function getAllCrime(myLatLong){
 					break;
 					
 				}
-				
-				
-			
 			}
-			totalCrime =(antiSocialBehaviour+bicycleTheft+burglary+criminalDamageArson+drugs+otherTheft+possessionOfWeapons+publicOrder+robbery+shoplifting+theftFromThePerson+vehicleCrime+violentCrime+otherCrime)
-			console.log(totalCrime)
+			
+			totalCrime = antiSocialBehaviour+bicycleTheft+burglary+criminalDamageArson+drugs+otherTheft+possessionOfWeapons+publicOrder+robbery+shoplifting+theftFromThePerson+vehicleCrime+violentCrime+otherCrime
 		
+			plotMarkers(myLatLong, location, id, totalCrime)
+
 		}
 		
 		
 	})
 
+	return totalCrime;
 
 }

@@ -1,16 +1,18 @@
 html { 
-height: 100% 
+	height: 100% 
 }
+
 body { 
-height: 100%; margin: 0; padding: 0 
+	height: 100%; margin: 0; padding: 0 
 }
+
 #map-canvas { 
-height: 87% ;
+	height: 90% ;
 }
 
 .navbar{
 	min-height: 9%;
-	background: #999999;
+	background: #EFE3FF;
 	border-bottom: 1px solid black;
 	font-size: 24px;
 	font-family: Arial;
