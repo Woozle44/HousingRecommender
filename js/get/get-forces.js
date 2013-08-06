@@ -6,10 +6,9 @@ $.ajax({
 		var stop = 0;
 
 		_.forEach(data, function(force){
-			
 			if(stop > 0){
 			}else{
-				getLatLong(force.name);
+				getLatLong(force.name, force.id);
 			}	
 
 			stop++;

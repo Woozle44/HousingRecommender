@@ -1,8 +1,14 @@
-function plotMarkers(myLatLong, location){
+function plotMarkers(myLatLong, location, id){
+
+	getAllCrime(myLatLong);
+
+	var image = "img/pins/green/1.png"
+
 
 	var marker = new google.maps.Marker({
 		position: myLatLong,
-		title: location
+		title: location,
+		icon: image
 	});
 
 	var contentString = "<strong>Force:</strong> " + location + ""
@@ -16,5 +22,5 @@ function plotMarkers(myLatLong, location){
 		});
 
 	marker.setMap(map);
-	
+
 }
