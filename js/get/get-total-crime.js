@@ -23,8 +23,8 @@ function getTotalCrime(myLatLong, location, id){
 		
 
 		success: function(data){
-			for(var i = 0; i < data.length; i++){
-				switch(data[i].category){
+			_.forEach(data, function(cat){
+				switch(cat.category){
 					case "anti-social-behaviour":
 						antiSocialBehaviour++;
 					break;
@@ -69,11 +69,13 @@ function getTotalCrime(myLatLong, location, id){
 					break;
 					
 				}
-			}
+			});
 			
 			totalCrime = antiSocialBehaviour+bicycleTheft+burglary+criminalDamageArson+drugs+otherTheft+possessionOfWeapons+publicOrder+robbery+shoplifting+theftFromThePerson+vehicleCrime+violentCrime+otherCrime
 		
 			plotMarkers(myLatLong, location, id, totalCrime)
+			
+				
 
 		}
 		

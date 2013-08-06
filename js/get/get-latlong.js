@@ -7,6 +7,7 @@ function messageQueueInit(location, id){
 		$('.loading').css('display','block');
 
 		$('#map-canvas').css('display','none');
+		google.maps.event.trigger(map, 'resize')
 
 		messageHandlerID = setInterval(function(){
 
@@ -33,6 +34,7 @@ function messageQueueInit(location, id){
 				messageHandlerID = null;
 				$('.loading').css('display','none');
 				$('#map-canvas').css('display','block');
+				google.maps.event.trigger(map, 'resize')
 			}
 
 		},1000);
