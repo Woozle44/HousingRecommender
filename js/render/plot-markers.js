@@ -1,7 +1,5 @@
 function plotMarkers(myLatLong, location, id, totalCrime){
-
 	
-	console.log(totalCrime);	
 	if(totalCrime > 1000){
 		var image = "img/pins/red/1.png"
 	}else if(totalCrime < 1000 && totalCrime > 500){

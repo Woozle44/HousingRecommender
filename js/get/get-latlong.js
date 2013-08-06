@@ -3,6 +3,9 @@ var messageHandlerID = null;
 
 function messageQueueInit(location, id){
 	if(messageHandlerID === null){
+
+		$('body').append('<img src="/img/loading.gif">');
+
 		messageHandlerID = setInterval(function(){
 
 			var location = messageQueue.pop();
@@ -19,13 +22,13 @@ function messageQueueInit(location, id){
 					getTotalCrime(myLatLong, location, id)
 
 
-
 				});
 			} 
 
 			if(messageQueue.length === 0){
 				clearInterval(messageHandlerID);
 				messageHandlerID = null;
+
 			}
 
 		},1000);
