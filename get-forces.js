@@ -4,7 +4,8 @@ $.ajax({
 	success: function(data){
 	
 		_.forEach(data, function(force){
-			console.log(force.name);
+			getLatLong(force.name);
+			
 		});
 	}
 })
