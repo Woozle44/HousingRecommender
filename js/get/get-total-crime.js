@@ -18,7 +18,7 @@ function getTotalCrime(myLatLong, location, id){
 	var totalCrime = 0;
 
 	$.ajax({
-		url: "http://housingrecommender.jacob.uk.com/api/getAllCrimes.php?lat=" + myLatLong.lb + "&long=" + myLatLong.mb + "",
+		url: "http://bestplacestolive.jacob.uk.com/api/getAllCrimes.php?lat=" + myLatLong.lb + "&long=" + myLatLong.mb + "",
 		dataType: "jsonp",
 		
 
