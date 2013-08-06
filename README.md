@@ -1,8 +1,8 @@
-# Housing Recommender
-#### An application to select suitable houses by collecting data from open sources such as crime rates, air pollution, house prices and more!
+# Best places to live!
+#### An application that people choose the best areas in the UK to live, calculating crime data, market prices, weather and pollution.
 
 ##### Created By: William Taylor
 ##### Mentored By: Jacob Clark
 
 
-View live version at: http://housingrecommender.jacob.uk.com/
+View live version at: http://bestplacestolive.jacob.uk.com/
