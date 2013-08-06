@@ -1,10 +1,14 @@
 function plotMarkers(myLatLong, location, id, totalCrime){
-	
-	if(totalCrime > 1000){
+
+	if(totalCrime > 800){
 		var image = "img/pins/red/1.png"
-	}else if(totalCrime < 1000 && totalCrime > 500){
+	}else if(totalCrime > 600 && totalCrime < 800){
 		var image = "img/pins/orange/1.png"
-	}else if(totalCrime > 0 && totalCrime < 500){
+	}else if(totalCrime > 400 && totalCrime < 600){
+		var image = "img/pins/yellow/1.png"
+	}else if(totalCrime > 200 && totalCrime < 400){
+		var image = "img/pins/line/1.png"
+	}else if(totalCrime > 0 && totalCrime < 200){
 		var image = "img/pins/green/1.png"
 	}
 	
@@ -18,11 +22,11 @@ function plotMarkers(myLatLong, location, id, totalCrime){
 
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString
-		});
+	});
 
-		google.maps.event.addListener(marker, 'click', function() {
-			infowindow.open(map,marker);
-		});
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+	});
 
 	marker.setMap(map);
 

@@ -3,11 +3,12 @@ html {
 }
 
 body { 
-	height: 100%; margin: 0; padding: 0 
+	height: 100%; margin: 0; padding: 0;
 }
 
 #map-canvas { 
-	height: 90% ;
+	height: 90%;
+
 }
 
 .navbar{
@@ -19,4 +20,14 @@ body {
 	letter-spacing: -1px;
 	padding-top: 30px;
 	padding-left: 30px;
+}
+
+.loading{
+	float: left;
+	z-index: 1;
+	display: none;
+	position: relative;
+	margin-top: 20%;
+	margin-left: 42%;
+	text-align:center;
 }

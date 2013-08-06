@@ -4,7 +4,9 @@ var messageHandlerID = null;
 function messageQueueInit(location, id){
 	if(messageHandlerID === null){
 
-		$('body').append('<img src="/img/loading.gif">');
+		$('.loading').css('display','block');
+
+		$('#map-canvas').css('display','none');
 
 		messageHandlerID = setInterval(function(){
 
@@ -19,7 +21,8 @@ function messageQueueInit(location, id){
 					var myLatLong = new google.maps.LatLng(results[0].geometry.location.lb,results[0].geometry.location.mb);
 					
 
-					getTotalCrime(myLatLong, location, id)
+					console.log(getTotalCrime(myLatLong, location, id));
+
 
 
 				});
@@ -28,7 +31,8 @@ function messageQueueInit(location, id){
 			if(messageQueue.length === 0){
 				clearInterval(messageHandlerID);
 				messageHandlerID = null;
-
+				$('.loading').css('display','none');
+				$('#map-canvas').css('display','block');
 			}
 
 		},1000);
