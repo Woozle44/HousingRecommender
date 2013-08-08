@@ -18,7 +18,7 @@ function plotMarkers(myLatLong, location, id, totalCrime){
 		icon: image
 	});
 
-	var contentString = "<strong>Force:</strong> " + location + ""
+	var contentString = "<strong>Total Crimes Committed:</strong> " + totalCrime + "crimes committed."
 
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString
